@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box; /*this is for padding not to effect the width*/
+}
+body {
+  font-family: "muli", sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  margin: 0px; /*this set margin to none */
+}
+
+.container{
+ display: flex;
+ justify-content: center;
+ width: 90vw;
+ 
+}
+
+.panel{
+  background-size:cover; /*this is to make sure that backgound cover the whole container even if the whole image is completely shown*/
+  background-repeat:no-repeat;/*this is to prevent tham image form repeating vertically and horizontally*/
+  background-position: center;/*this makes the image start at center than the default left corner*/
+  height: 80vh;
+  border-radius:50px;
+  color:rgb(99, 104, 110);
+  cursor:pointer;
+  flex:0.5; /* this is to make the elements look even i.e with wise*/
+  margin:10px; /*this is for space between panels*/
+  position:relative; /*this is inorder to make h3 to absolute we need to make its container relative*/
+  transition: flex 0.7s ease-in; /* effect for avtive panel*/
+}
+
+.panel h3{
+  font-size:24px;
+  position:absolute;
+  bottom:20px;
+  left:25px;
+  margin:0;
+  opacity:0;
+
+}
+
+.panel.active{
+  flex:5;
+
+}
+
+.panel.active h3{
+  opacity:1;
+}
+
+@media(max-width:480px){    /*when screen is 480px and down the following commands are executed*/
+  .container{
+    width:100vw;
+  }
+  .panel:nth-child(5),.panel:nth-child(6),.panel:nth-child(7){
+    display:none;
+  }
+}
